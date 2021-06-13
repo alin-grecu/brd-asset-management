@@ -2,3 +2,4 @@ boto3==1.14.16
 botocore==1.17.16
 urllib3==1.23
 jinja2==2.11.2
+htmlmin==0.1.12

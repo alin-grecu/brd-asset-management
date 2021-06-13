@@ -4,9 +4,9 @@ from jinja2 import Environment, FileSystemLoader
 import boto3
 import urllib.request
 import json
-import sys
 import os
 import webbrowser
+import htmlmin
 
 
 def get_data(url):
@@ -44,6 +44,8 @@ def render_template(simfonia, diverso, actiunia, obligatiuni, total, PLOT_MAX_PI
         obligatiuni=obligatiuni,
         total=total,
         MAX_PIXELS=PLOT_MAX_PIXELS)
+
+    render = htmlmin.minify(render, remove_comments=True, remove_empty_space=True)
 
     if save_file:
         try:
