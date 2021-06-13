@@ -11,7 +11,7 @@ class Email:
 
 
 class Graph:
-    PLOT_MAX_PIXELS = 100  # Max plot height you want. This will be the height of max(data).
+    PLOT_MAX_PIXELS = 50  # Max plot height you want. This will be the height of max(data).
 
 
 class Simfonia:
