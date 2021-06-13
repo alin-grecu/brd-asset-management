@@ -29,7 +29,7 @@ def set_values(data, units):
     return data
 
 
-def render_template(simfonia, diverso, total, PLOT_MAX_PIXELS,
+def render_template(simfonia, diverso, actiunia, obligatiuni, total, PLOT_MAX_PIXELS,
                     save_file=False):
     file_loader = FileSystemLoader('templates')
 
@@ -40,6 +40,8 @@ def render_template(simfonia, diverso, total, PLOT_MAX_PIXELS,
     render = template.render(
         simfonia=simfonia,
         diverso=diverso,
+        actiunia=actiunia,
+        obligatiuni=obligatiuni,
         total=total,
         MAX_PIXELS=PLOT_MAX_PIXELS)
 
