@@ -122,7 +122,7 @@ def local():
         This is used to run the render locally. Upon run it will open
         a new tab in firefox and plot the portfolios data.
     """
-    render_template(simfonia, diverso, total, Graph.PLOT_MAX_PIXELS, True)
+    render_template(simfonia, diverso, actiunia, obligatiuni, total, Graph.PLOT_MAX_PIXELS, True)
 
 
 def lambda_handler(event, context):
