@@ -35,7 +35,7 @@ class ActiuniA:
     NAME = 'actiunia'
     UNITS = float(os.getenv('UNITS_ACTIUNIA'))
     INVESTED = int(os.getenv('INVESTED_ACTIUNIA'))
-    URL = 'https://brdam.ro/assets/json/istorics.json'
+    URL = 'https://www.brdam.ro/assets/json/istorica.json'
     START_COLOR = '#067d67'
     END_COLOR = '#0fd9b4'
 
@@ -43,7 +43,7 @@ class Obligatiuni:
     NAME = 'obligatiuni'
     UNITS = float(os.getenv('UNITS_OBLIGATIUNI'))
     INVESTED = int(os.getenv('INVESTED_OBLIGATIUNI'))
-    URL = 'https://brdam.ro/assets/json/istorics.json'
+    URL = 'https://www.brdam.ro/assets/json/istoricc.json'
     START_COLOR = '#82160e'
     END_COLOR = '#d91b0d'
 
