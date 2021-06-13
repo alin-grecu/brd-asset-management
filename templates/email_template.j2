@@ -221,6 +221,196 @@
                                                                     <tr>
                                                                         <td align="center" class="label"
                                                                             style="color: #717172; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 28px; text-align:center;">
+                                                                            {{ actiunia.data[index] }}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td height="9"
+                                                                            style="font-size:1px;line-height:1px"> </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td height="{{ ((actiunia.data[index] - actiunia.data[:7]|min) * (MAX_PIXELS / (actiunia.data[:7]|max - actiunia.data[:7]|min))) + 50 }}"
+                                                                            class="animate"
+                                                                            style="font-size:0px; line-height:0px; background-image: linear-gradient({{ actiunia.plot.start_color }}, {{ actiunia.plot.end_color }});"
+                                                                            bgcolor="#17a2b8">&nbsp;</td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <!--[if (gte mso 9)|(IE)]> </td> </tr> </table> <![endif]-->
+                                    </td>
+                                {% endfor %}
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td>
+                                        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="">
+                                            <tr>
+                                                <td height="1" width="100%" bgcolor="#c3c8c9" class="tronHr"
+                                                    style="background-color:#c3c8c9;font-size:1px;line-height:1px">
+                                                    &nbsp;
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <table width="90%" height="20" border="0" cellpadding="0" cellspacing="0" class=""
+                                style="table-layout:fixed">
+                            </table>
+                            <p align="center"
+                                style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                                <b>TOTAL {{ actiunia.name|upper }}</b>
+                            </p>
+                            <p align="center"
+                                style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                                You are <b>{% if actiunia.gain > 0 %} up {% else %} down {% endif %} {{ actiunia.gain|abs }} RON</b> on {{ actiunia.latest_date }}</p>
+                                <p align="center"
+                                style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                                Maximum gain was <b>{{ actiunia.max_gain|abs }} RON</b></p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <td align="center">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:500px">
+                    <tr>
+                        <td align="center">
+                            <table width="90%" height="0" border="0" cellpadding="0" cellspacing="0" class="wrap90"
+                                style="table-layout:fixed">
+                                <tr>
+                                {% for index in range(6, -1, -1) %}
+                                    <td valign="bottom">
+                                        <!--[if (gte mso 9)|(IE)]> <table width="47" align="center" cellpadding="0" cellspacing="0" border="0"> <tr> <td> <![endif]-->
+                                        <table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                            style="max-width:90%" align="center">
+                                            <tr>
+                                                <td valign="bottom" align="center">
+                                                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <td style="font-size:0px; line-height:0px;">
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                        <tr>
+                                                            <td align="left" valign="bottom">
+                                                                <table width="100%" cellpadding="0" cellspacing="0"
+                                                                    border="0" class="chartWidth" style="width:100%">
+                                                                    <tr>
+                                                                        <td align="center" class="label"
+                                                                            style="color: #717172; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 28px; text-align:center;">
+                                                                            {{ obligatiuni.data[index] }}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td height="9"
+                                                                            style="font-size:1px;line-height:1px"> </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td height="{{ ((obligatiuni.data[index] - obligatiuni.data[:7]|min) * (MAX_PIXELS / (obligatiuni.data[:7]|max - obligatiuni.data[:7]|min))) + 50 }}"
+                                                                            class="animate"
+                                                                            style="font-size:0px; line-height:0px; background-image: linear-gradient({{ obligatiuni.plot.start_color }}, {{ obligatiuni.plot.end_color }});"
+                                                                            bgcolor="#17a2b8">&nbsp;</td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <!--[if (gte mso 9)|(IE)]> </td> </tr> </table> <![endif]-->
+                                    </td>
+                                {% endfor %}
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td>
+                                        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="">
+                                            <tr>
+                                                <td height="1" width="100%" bgcolor="#c3c8c9" class="tronHr"
+                                                    style="background-color:#c3c8c9;font-size:1px;line-height:1px">
+                                                    &nbsp;
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <table width="90%" height="20" border="0" cellpadding="0" cellspacing="0" class=""
+                                style="table-layout:fixed">
+                            </table>
+                            <p align="center"
+                                style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                                <b>TOTAL {{ obligatiuni.name|upper }}</b>
+                            </p>
+                            <p align="center"
+                                style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                                You are <b>{% if obligatiuni.gain > 0 %} up {% else %} down {% endif %} {{ obligatiuni.gain|abs }} RON</b> on {{ obligatiuni.latest_date }}</p>
+                                <p align="center"
+                                style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                                Maximum gain was <b>{{ obligatiuni.max_gain|abs }} RON</b></p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <td align="center">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:500px">
+                    <tr>
+                        <td align="center">
+                            <table width="90%" height="0" border="0" cellpadding="0" cellspacing="0" class="wrap90"
+                                style="table-layout:fixed">
+                                <tr>
+                                {% for index in range(6, -1, -1) %}
+                                    <td valign="bottom">
+                                        <!--[if (gte mso 9)|(IE)]> <table width="47" align="center" cellpadding="0" cellspacing="0" border="0"> <tr> <td> <![endif]-->
+                                        <table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                            style="max-width:90%" align="center">
+                                            <tr>
+                                                <td valign="bottom" align="center">
+                                                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <td style="font-size:0px; line-height:0px;">
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                        <tr>
+                                                            <td align="left" valign="bottom">
+                                                                <table width="100%" cellpadding="0" cellspacing="0"
+                                                                    border="0" class="chartWidth" style="width:100%">
+                                                                    <tr>
+                                                                        <td align="center" class="label"
+                                                                            style="color: #717172; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 28px; text-align:center;">
                                                                             {{ total.data[index] }}</td>
                                                                     </tr>
                                                                     <tr>
