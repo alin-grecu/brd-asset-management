@@ -104,7 +104,7 @@ else:
     data_range = len(simfonia.data)
 
 for index in range(data_range):
-    data.append(simfonia.data[index] + diverso.data[index])
+    data.append(simfonia.data[index] + diverso.data[index] + actiunia.data[index] + obligatiuni.data[index])
 
 gain = simfonia.gain + diverso.gain + actiunia.gain + obligatiuni.gain
 max_gain = simfonia.max_gain + diverso.max_gain + actiunia.max_gain + obligatiuni.max_gain
