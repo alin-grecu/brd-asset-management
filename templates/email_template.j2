@@ -30,8 +30,17 @@
                                                                     border="0" class="chartWidth" style="width:100%">
                                                                     <tr>
                                                                         <td align="center" class="label"
-                                                                            style="color: #717172; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 28px; text-align:center;">
-                                                                            {{ simfonia.data[index] }}</td>
+                                                                            style="color: {% if simfonia.data[index] > simfonia.data[index+1] %} #62c922 {% else %} #c92222 {% endif %}; font-family: Calibri, sans-serif; font-size: 12px; text-align:center;">
+                                                                            <b>
+                                                                                ({% if simfonia.data[index] > simfonia.data[index+1] %}+{% endif %}{{ simfonia.data[index] - simfonia.data[index+1] }})
+                                                                            </b>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align="center" class="label"
+                                                                            style="color: #717172; font-family: Calibri, sans-serif; font-size: 12px; line-height: 28px; text-align:center;">
+                                                                            <b>{{ simfonia.data[index] }}</b>
+                                                                        </td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td height="9"
@@ -41,7 +50,8 @@
                                                                         <td height="{{ ((simfonia.data[index] - simfonia.data[:7]|min) * (MAX_PIXELS / (simfonia.data[:7]|max - simfonia.data[:7]|min))) + 50 }}"
                                                                             class="animate"
                                                                             style="font-size:0px; line-height:0px; background-image: linear-gradient({{ simfonia.plot.start_color }}, {{ simfonia.plot.end_color }});"
-                                                                            bgcolor="#17a2b8">&nbsp;</td>
+                                                                            bgcolor="#17a2b8">&nbsp;
+                                                                        </td>
                                                                     </tr>
                                                                 </table>
                                                             </td>
@@ -81,14 +91,14 @@
                                 style="table-layout:fixed">
                             </table>
                             <p align="center"
-                                style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                                style="font-family: Calibri, sans-serif;">
                                 <b>{{ simfonia.name|upper }}</b>
                             </p>
                             <p align="center"
-                                style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                                style="font-family: Calibri, sans-serif;">
                                 You are <b>{% if simfonia.gain > 0 %} up {% else %} down {% endif %} {{ simfonia.gain|abs }} RON</b> on {{ simfonia.latest_date }}</p>
                                 <p align="center"
-                                style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                                style="font-family: Calibri, sans-serif;">
                                 Maximum gain was <b>{{ simfonia.max_gain|abs }} RON</b></p>
                         </td>
                     </tr>
@@ -125,8 +135,16 @@
                                                                     border="0" class="chartWidth" style="width:100%">
                                                                     <tr>
                                                                         <td align="center" class="label"
-                                                                            style="color: #717172; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 28px; text-align:center;">
-                                                                            {{ diverso.data[index] }}</td>
+                                                                            style="color: {% if diverso.data[index] > diverso.data[index+1] %} #62c922 {% else %} #c92222 {% endif %}; font-family: Calibri, sans-serif; font-size: 12px; text-align:center;">
+                                                                            <b>
+                                                                                ({% if diverso.data[index] > diverso.data[index+1] %}+{% endif %}{{ diverso.data[index] - diverso.data[index+1] }})
+                                                                            </b>
+                                                                        </td>
+                                                                    </tr>
+                                                                        <td align="center" class="label"
+                                                                            style="color: #717172; font-family: Calibri, sans-serif; font-size: 12px; line-height: 28px; text-align:center;">
+                                                                            <b>{{ diverso.data[index] }}</b>
+                                                                        </td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td height="9"
@@ -176,14 +194,14 @@
                                 style="table-layout:fixed">
                             </table>
                             <p align="center"
-                                style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                                style="font-family: Calibri, sans-serif;">
                                 <b>{{ diverso.name|upper }}</b>
                             </p>
                             <p align="center"
-                                style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                                style="font-family: Calibri, sans-serif;">
                                 You are <b>{% if diverso.gain > 0 %} up {% else %} down {% endif %} {{ diverso.gain|abs }} RON</b> on {{ diverso.latest_date }}</p>
                                 <p align="center"
-                                style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                                style="font-family: Calibri, sans-serif;">
                                 Maximum gain was <b>{{ diverso.max_gain|abs }} RON</b></p>
                         </td>
                     </tr>
@@ -220,18 +238,29 @@
                                                                     border="0" class="chartWidth" style="width:100%">
                                                                     <tr>
                                                                         <td align="center" class="label"
-                                                                            style="color: #717172; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 28px; text-align:center;">
-                                                                            {{ actiunia.data[index] }}</td>
+                                                                            style="color: {% if actiunia.data[index] > actiunia.data[index+1] %} #62c922 {% else %} #c92222 {% endif %}; font-family: Calibri, sans-serif; font-size: 12px; text-align:center;">
+                                                                            <b>
+                                                                                ({% if actiunia.data[index] > actiunia.data[index+1] %}+{% endif %}{{ actiunia.data[index] - actiunia.data[index+1] }})
+                                                                            </b>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align="center" class="label"
+                                                                            style="color: #717172; font-family: Calibri, sans-serif; font-size: 12px; line-height: 28px; text-align:center;">
+                                                                            <b>{{ actiunia.data[index] }}</b>
+                                                                        </td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td height="9"
-                                                                            style="font-size:1px;line-height:1px"> </td>
+                                                                            style="font-size:1px;line-height:1px">
+                                                                        </td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td height="{{ ((actiunia.data[index] - actiunia.data[:7]|min) * (MAX_PIXELS / (actiunia.data[:7]|max - actiunia.data[:7]|min))) + 50 }}"
                                                                             class="animate"
                                                                             style="font-size:0px; line-height:0px; background-image: linear-gradient({{ actiunia.plot.start_color }}, {{ actiunia.plot.end_color }});"
-                                                                            bgcolor="#17a2b8">&nbsp;</td>
+                                                                            bgcolor="#17a2b8">&nbsp;
+                                                                        </td>
                                                                     </tr>
                                                                 </table>
                                                             </td>
@@ -271,14 +300,14 @@
                                 style="table-layout:fixed">
                             </table>
                             <p align="center"
-                                style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                                style="font-family: Calibri, sans-serif;">
                                 <b>{{ actiunia.name|upper }}</b>
                             </p>
                             <p align="center"
-                                style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                                style="font-family: Calibri, sans-serif;">
                                 You are <b>{% if actiunia.gain > 0 %} up {% else %} down {% endif %} {{ actiunia.gain|abs }} RON</b> on {{ actiunia.latest_date }}</p>
                                 <p align="center"
-                                style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                                style="font-family: Calibri, sans-serif;">
                                 Maximum gain was <b>{{ actiunia.max_gain|abs }} RON</b></p>
                         </td>
                     </tr>
@@ -315,18 +344,29 @@
                                                                     border="0" class="chartWidth" style="width:100%">
                                                                     <tr>
                                                                         <td align="center" class="label"
-                                                                            style="color: #717172; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 28px; text-align:center;">
-                                                                            {{ obligatiuni.data[index] }}</td>
+                                                                            style="color: {% if obligatiuni.data[index] > obligatiuni.data[index+1] %} #62c922 {% else %} #c92222 {% endif %}; font-family: Calibri, sans-serif; font-size: 12px; text-align:center;">
+                                                                            <b>
+                                                                                ({% if obligatiuni.data[index] > obligatiuni.data[index+1] %}+{% endif %}{{ obligatiuni.data[index] - obligatiuni.data[index+1] }})
+                                                                            </b>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align="center" class="label"
+                                                                            style="color: #717172; font-family: Calibri, sans-serif; font-size: 12px; line-height: 28px; text-align:center;">
+                                                                            <b>{{ obligatiuni.data[index] }}</b>
+                                                                        </td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td height="9"
-                                                                            style="font-size:1px;line-height:1px"> </td>
+                                                                            style="font-size:1px;line-height:1px">
+                                                                        </td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td height="{{ ((obligatiuni.data[index] - obligatiuni.data[:7]|min) * (MAX_PIXELS / (obligatiuni.data[:7]|max - obligatiuni.data[:7]|min))) + 50 }}"
                                                                             class="animate"
                                                                             style="font-size:0px; line-height:0px; background-image: linear-gradient({{ obligatiuni.plot.start_color }}, {{ obligatiuni.plot.end_color }});"
-                                                                            bgcolor="#17a2b8">&nbsp;</td>
+                                                                            bgcolor="#17a2b8">&nbsp;
+                                                                        </td>
                                                                     </tr>
                                                                 </table>
                                                             </td>
@@ -366,14 +406,14 @@
                                 style="table-layout:fixed">
                             </table>
                             <p align="center"
-                                style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                                style="font-family: Calibri, sans-serif;">
                                 <b>{{ obligatiuni.name|upper }}</b>
                             </p>
                             <p align="center"
-                                style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                                style="font-family: Calibri, sans-serif;">
                                 You are <b>{% if obligatiuni.gain > 0 %} up {% else %} down {% endif %} {{ obligatiuni.gain|abs }} RON</b> on {{ obligatiuni.latest_date }}</p>
                                 <p align="center"
-                                style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                                style="font-family: Calibri, sans-serif;">
                                 Maximum gain was <b>{{ obligatiuni.max_gain|abs }} RON</b></p>
                         </td>
                     </tr>
@@ -410,8 +450,16 @@
                                                                     border="0" class="chartWidth" style="width:100%">
                                                                     <tr>
                                                                         <td align="center" class="label"
-                                                                            style="color: #717172; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 28px; text-align:center;">
-                                                                            {{ total.data[index] }}</td>
+                                                                            style="color: {% if total.data[index] > total.data[index+1] %} #62c922 {% else %} #c92222 {% endif %}; font-family: Calibri, sans-serif; font-size: 12px; text-align:center;">
+                                                                            <b>
+                                                                                ({% if total.data[index] > total.data[index+1] %}+{% endif %}{{ total.data[index] - total.data[index+1] }})
+                                                                            </b>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align="center" class="label"
+                                                                            style="color: #717172; font-family: Calibri, sans-serif; font-size: 12px; line-height: 28px; text-align:center;">
+                                                                            <b>{{ total.data[index] }}</b></td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td height="9"
@@ -461,14 +509,14 @@
                                 style="table-layout:fixed">
                             </table>
                             <p align="center"
-                                style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                                style="font-family: Calibri, sans-serif;">
                                 <b>TOTAL</b>
                             </p>
                             <p align="center"
-                                style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                                style="font-family: Calibri, sans-serif;">
                                 You are <b>{% if total.gain > 0 %} up {% else %} down {% endif %} {{ total.gain|abs }} RON</b> on {{ total.latest_date }}</p>
                                 <p align="center"
-                                style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                                style="font-family: Calibri, sans-serif;">
                                 Maximum gain was <b>{{ total.max_gain|abs }} RON</b></p>
                         </td>
                     </tr>
