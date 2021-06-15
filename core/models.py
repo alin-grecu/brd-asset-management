@@ -12,5 +12,6 @@ class Portfolio(NamedTuple):
     data: list
     gain: int
     max_gain: int
+    invested: int
     latest_date: str
     plot: Plot

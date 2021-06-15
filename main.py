@@ -22,7 +22,7 @@ latest_date = get_latest_date(Simfonia.URL)
 plot = Plot(Graph.PLOT_MAX_PIXELS, Simfonia.START_COLOR, Simfonia.END_COLOR)
 
 # Instantiate portfolio.
-simfonia = Portfolio(name, data, gain, max_gain, latest_date, plot)
+simfonia = Portfolio(name, data, gain, max_gain, Simfonia.INVESTED ,latest_date, plot)
 
 # ----- Diverso -----
 
@@ -45,7 +45,7 @@ latest_date = get_latest_date(Diverso.URL)
 plot = Plot(Graph.PLOT_MAX_PIXELS, Diverso.START_COLOR, Diverso.END_COLOR)
 
 # Instantiate portfolio.
-diverso = Portfolio(name, data, gain, max_gain, latest_date, plot)
+diverso = Portfolio(name, data, gain, max_gain, Diverso.INVESTED, latest_date, plot)
 
 # ----- Actiuni A -----
 # Name will be used to print the plot name.
@@ -67,7 +67,7 @@ latest_date = get_latest_date(ActiuniA.URL)
 plot = Plot(Graph.PLOT_MAX_PIXELS, ActiuniA.START_COLOR, ActiuniA.END_COLOR)
 
 # Instantiate portfolio.
-actiunia = Portfolio(name, data, gain, max_gain, latest_date, plot)
+actiunia = Portfolio(name, data, gain, max_gain, ActiuniA.INVESTED, latest_date, plot)
 
 # ----- Obligatiuni -----
 # Name will be used to print the plot name.
@@ -89,7 +89,7 @@ latest_date = get_latest_date(Obligatiuni.URL)
 plot = Plot(Graph.PLOT_MAX_PIXELS, Obligatiuni.START_COLOR, Obligatiuni.END_COLOR)
 
 # Instantiate portfolio.
-obligatiuni = Portfolio(name, data, gain, max_gain, latest_date, plot)
+obligatiuni = Portfolio(name, data, gain, max_gain, Obligatiuni.INVESTED, latest_date, plot)
 
 # ----- Total -----
 
@@ -114,7 +114,7 @@ latest_date = simfonia.latest_date
 
 plot = Plot(Graph.PLOT_MAX_PIXELS, Total.START_COLOR, Total.END_COLOR)
 
-total = Portfolio(name, data, gain, max_gain, latest_date, plot)
+total = Portfolio(name, data, gain, max_gain, (Simfonia.INVESTED + Diverso.INVESTED + ActiuniA.INVESTED + Obligatiuni.INVESTED), latest_date, plot)
 
 
 def local():

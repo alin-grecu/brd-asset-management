@@ -96,7 +96,7 @@
                             </p>
                             <p align="center"
                                 style="font-family: Calibri, sans-serif;">
-                                You are <b>{% if simfonia.gain > 0 %} up {% else %} down {% endif %} {{ simfonia.gain|abs }} RON</b> on {{ simfonia.latest_date }}</p>
+                                You are <b>{% if simfonia.gain > 0 %} up {{ simfonia.gain|abs }} RON (<b style="color: #62c922">+{{ (simfonia.gain * 100 / simfonia.invested) | round(2) }}%</b>) {% else %} down {{ simfonia.gain|abs }} RON (<b style="color: #c92222">-{{ (simfonia.gain * 100 / simfonia.invested) | round(2) }}%</b>) {% endif %}</b> on {{ simfonia.latest_date }}</p>
                                 <p align="center"
                                 style="font-family: Calibri, sans-serif;">
                                 Maximum gain was <b>{{ simfonia.max_gain|abs }} RON</b></p>
@@ -200,7 +200,7 @@
                             </p>
                             <p align="center"
                                 style="font-family: Calibri, sans-serif;">
-                                You are <b>{% if diverso.gain > 0 %} up {% else %} down {% endif %} {{ diverso.gain|abs }} RON</b> on {{ diverso.latest_date }}</p>
+                                You are <b>{% if diverso.gain > 0 %} up {{ diverso.gain|abs }} RON (<b style="color: #62c922">+{{ (diverso.gain * 100 / diverso.invested) | round(2) }}%</b>) {% else %} down {{ diverso.gain|abs }} RON (<b style="color: #c92222">-{{ (diverso.gain * 100 / diverso.invested) | round(2) }}%</b>) {% endif %}</b> on {{ diverso.latest_date }}</p>
                                 <p align="center"
                                 style="font-family: Calibri, sans-serif;">
                                 Maximum gain was <b>{{ diverso.max_gain|abs }} RON</b></p>
@@ -306,7 +306,7 @@
                             </p>
                             <p align="center"
                                 style="font-family: Calibri, sans-serif;">
-                                You are <b>{% if actiunia.gain > 0 %} up {% else %} down {% endif %} {{ actiunia.gain|abs }} RON</b> on {{ actiunia.latest_date }}</p>
+                                You are <b>{% if actiunia.gain > 0 %} up {{ actiunia.gain|abs }} RON (<b style="color: #62c922">+{{ (actiunia.gain * 100 / actiunia.invested) | round(2) }}%</b>) {% else %} down {{ actiunia.gain|abs }} RON (<b style="color: #c92222">-{{ (actiunia.gain * 100 / actiunia.invested) | round(2) }}%</b>) {% endif %}</b> on {{ actiunia.latest_date }}</p>
                                 <p align="center"
                                 style="font-family: Calibri, sans-serif;">
                                 Maximum gain was <b>{{ actiunia.max_gain|abs }} RON</b></p>
@@ -412,7 +412,7 @@
                             </p>
                             <p align="center"
                                 style="font-family: Calibri, sans-serif;">
-                                You are <b>{% if obligatiuni.gain > 0 %} up {% else %} down {% endif %} {{ obligatiuni.gain|abs }} RON</b> on {{ obligatiuni.latest_date }}</p>
+                                You are <b>{% if obligatiuni.gain > 0 %} up {{ obligatiuni.gain|abs }} RON (<b style="color: #62c922">+{{ (obligatiuni.gain * 100 / obligatiuni.invested) | round(2) }}%</b>) {% else %} down {{ obligatiuni.gain|abs }} RON (<b style="color: #c92222">-{{ (obligatiuni.gain * 100 / obligatiuni.invested) | round(2) }}%</b>) {% endif %}</b> on {{ obligatiuni.latest_date }}</p>
                                 <p align="center"
                                 style="font-family: Calibri, sans-serif;">
                                 Maximum gain was <b>{{ obligatiuni.max_gain|abs }} RON</b></p>
@@ -515,7 +515,7 @@
                             </p>
                             <p align="center"
                                 style="font-family: Calibri, sans-serif;">
-                                You are <b>{% if total.gain > 0 %} up {% else %} down {% endif %} {{ total.gain|abs }} RON</b> on {{ total.latest_date }}</p>
+                                You are <b>{% if total.gain > 0 %} up {{ total.gain|abs }} RON (<b style="color: #62c922">+{{ (total.gain * 100 / total.invested) | round(2) }}%</b>) {% else %} down {{ total.gain|abs }} RON (<b style="color: #c92222">-{{ (total.gain * 100 / total.invested) | round(2) }}%</b>) {% endif %}</b> on {{ total.latest_date }}</p>
                                 <p align="center"
                                 style="font-family: Calibri, sans-serif;">
                                 Maximum gain was <b>{{ total.max_gain|abs }} RON</b></p>
